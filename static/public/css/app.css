@@ -1,0 +1,228 @@
+/* Variables */
+/* Hidden */
+.hidden.menu {
+  display: none; }
+
+/* Global Part */
+.ui.vertical.stripe {
+  padding: 8em 0em; }
+  .ui.vertical.stripe h3 {
+    font-size: 2em; }
+  .ui.vertical.stripe .button + h3, .ui.vertical.stripe p + h3 {
+    margin-top: 3em; }
+  .ui.vertical.stripe .floated.image {
+    clear: both; }
+  .ui.vertical.stripe p {
+    font-size: 1.33em; }
+  .ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em; }
+
+
+.ui.square {
+  border-radius: 0;
+  border: 0; }
+
+.ui.input input {
+  border-radius: 0; }
+
+.ui.action.input input {
+  padding-right: 10.67143em !important; }
+
+.ui.action.input > .button, .ui.action.input > .buttons > .button {
+  padding-left: 2em;
+  padding-right: 2em; }
+
+.ui.action.input:not([class*="left action"]) > .button:last-child {
+  border-radius: 0; }
+
+.ui.button, .ui.basic.button {
+  border-radius: 0; }
+
+.ui.card, .ui.cards > .card {
+  border: none;
+  border-radius: 0; }
+  .ui.card .image, .ui.cards > .card .image {
+    background: transparent; }
+
+.ui.tabular.menu .active.item {
+  border-radius: 0 0 0 0 !important; }
+
+/* body */
+body {
+  background: #f9f9f9;
+  background-color: #f9f9f9; }
+
+/* Menu */
+/* Kategori */
+.top-section {
+  margin-top: 1em; }
+
+#category {
+  padding: 1em;}
+
+#category-lowongan {
+  padding: 1em;
+  border-top: solid 2px #fbbd08;}
+
+
+/*.ui.vertical.menu{
+  width: 20rem;
+}*/
+
+
+
+.ui.menu a.item.kategori:hover {
+  color: white;
+  background: #2185d0; }
+
+/* Banner */
+#banner {
+  padding: 0;
+  margin-bottom: 0; }
+
+
+.banner-section {
+  margin-left: 0em; }
+
+.banner-section2{
+  margin-top: 56px;
+  text-align: center;
+  border-top: .3em solid #fbbd08;
+  
+}
+.center-cropped {
+  object-fit: none;
+  object-position: center;
+  width: 100%;
+  height: 500px; }
+
+/* Slick */
+.slick-dots {
+  bottom: 10px; }
+
+.slick-prev {
+  left: 25px;
+  z-index: 2; }
+
+.slick-next {
+  right: 25px;
+  z-index: 2; }
+
+
+
+/* Promo */
+#promo {
+  margin-top: 0; }
+
+.ui.menu a.item.promo:hover {
+  border-bottom: 1px solid #2185d0; }
+
+/* Kelebihan coCustom */
+.custom-section {
+  margin-top: 8em;
+  margin-bottom: 1em;
+  margin-left: 1em; }
+
+.full-height {
+  margin-top: 8em;
+  margin-bottom: 1em;
+  margin-left: 1em; }
+
+.login-section {
+  margin-top: 7em;
+}
+.register-section {
+  margin-top: 7em;
+}
+.pasang-job-section {
+  margin-top: 7em;
+}
+
+.category-top-section {
+  margin-top: 7em; }
+
+
+#content-login-regis {
+  max-width: 500px; }
+
+#content-pasang-job {
+  max-width: 700px; }
+
+.kategori-section {
+  background: #f9f9f9; }
+
+.info-section {
+  margin-top: 2em; }
+
+/* Show Barang */
+.showroom-section {
+  margin-top: 2em; }
+
+#show-barang {
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0; }
+
+/* list item */
+.title-product-section {
+  margin-left: 2em; }
+
+/* Breadcrumb */
+.breadcrumb-section {
+  margin-top: 1em; }
+
+/* Detail product */
+.title-detail-section {
+  margin-top: 2em; }
+
+.detail-product-section {
+  margin-top: 1em; }
+
+.ui.thumbnail {
+  margin-bottom: 1em; }
+
+.ui.full-image {
+  max-width: 340px;
+  max-height: 340px; }
+
+#image-product {
+  padding-left: 0; }
+
+#custom-product {
+  max-height: 368px;
+  height: 368px; }
+
+#height-custom {
+  height: 215px;
+  max-height: 215px;
+  border-radius: 0; }
+
+
+/* Sosial */
+.sosial-section {
+  margin-top: 2em; }
+
+
+/* Footer */
+.footer {
+  margin-top: 1em; }
+
+
+
+.ui.inverted.segment, .ui.primary.inverted.segment {
+  background: black;
+  color: #fff;
+  border-top: .3em solid #00B5AD; }
+
+.ui.link.list a.item {
+  color: #fff; }
+
+@media only screen and (max-width: 700px) {
+  .ui.fixed.menu {
+    display: none !important; }
+
+  .masthead.segment {
+    min-height: 350px; } }
+
+/*# sourceMappingURL=app.css.map */

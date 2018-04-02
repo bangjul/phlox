@@ -1,0 +1,229 @@
+/* Variables */
+$body-color: #e6e6e6;
+$color-black: black;
+$color-light-grey: lightgrey;
+$color-white: white;
+$color-blue-primary: #2185d0;
+
+$zero-value: 0;
+
+/* Hidden */
+.hidden.menu {
+    display: none;
+}
+
+/* Global Part */
+.ui.vertical.stripe {
+    padding: 8em 0em;
+    h3 {
+        font-size: 2em;
+    }
+    .button + h3, p + h3 {
+        margin-top: 3em;
+    }
+    .floated.image {
+        clear: both;
+    }
+    p {
+        font-size: 1.33em;
+    }
+    .horizontal.divider {
+        margin: 3em 0em;
+    }
+}
+
+.ui.square {
+    border-radius: $zero-value;
+    border: $zero-value;
+}
+
+.ui.input input {
+    border-radius: $zero-value;
+}
+
+.ui.action.input input {
+    padding-right: 10.671429em!important;
+}
+
+.ui.action.input>.button, .ui.action.input>.buttons>.button {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.ui.action.input:not([class*="left action"])>.button:last-child {
+    border-radius: $zero-value;
+}
+
+.ui.button, .ui.basic.button {
+    border-radius: $zero-value;
+}
+
+.ui.card, .ui.cards>.card {
+    border: none;
+    border-radius: $zero-value;
+    .image {
+        background: transparent;
+    }
+}
+
+.ui.tabular.menu .active.item {
+    border-radius: 0 0 0 0!important;
+}
+
+/* body */
+body {
+    background: $body-color;
+    background-color: $body-color;
+}
+
+/* Menu */
+
+/* Kategori */
+.top-section {
+    margin-top: 1em;
+}
+
+#category {
+    padding: 1em;
+}
+
+.ui.menu a.item.kategori:hover {
+    color: $color-white;
+    background: $color-blue-primary;
+}
+
+/* Banner */
+#banner {
+    padding: $zero-value;
+    margin-bottom: $zero-value;
+}
+
+.banner-section {
+    margin-left: 2em;
+}
+
+.center-cropped {
+    object-fit: none;
+    object-position: center;
+    width: 100%;
+    height: 430px;
+}
+
+/* Slick */
+.slick-dots {
+    bottom: 10px;
+}
+
+.slick-prev {
+    left: 25px;
+    z-index: 2;
+}
+
+.slick-next {
+    right: 25px;
+    z-index: 2;
+}
+
+
+/* Promo */
+#promo {
+    margin-top: $zero-value;
+}
+
+.ui.menu a.item.promo:hover {
+    border-bottom: 1px solid $color-blue-primary;
+}
+
+/* Kelebihan Custom */
+.custom-section {
+    margin-top: 2em;
+}
+
+/* Show Barang */
+.showroom-section {
+    margin-top: 2em;
+}
+
+#show-barang {
+    border-radius: $zero-value;
+    border-left: $zero-value;
+    border-right: $zero-value;
+    border-bottom: $zero-value;
+}
+
+/* list item */
+.title-product-section {
+    margin-left: 2em;
+}
+
+/* Breadcrumb */
+.breadcrumb-section {
+    margin-top: 1em;
+}
+
+/* Detail product */
+.title-detail-section {
+    margin-top: 2em;
+}
+
+.detail-product-section {
+    margin-top: 1em;
+}
+
+.ui.thumbnail {
+    margin-bottom: 1em;
+}
+
+.ui.full-image {
+    max-width: 340px;
+    max-height: 340px;
+}
+
+#image-product {
+    padding-left: $zero-value;
+}
+
+#custom-product {
+    max-height: 368px;
+    height: 368px;
+}
+
+#height-custom {
+    height: 215px;
+    max-height: 215px;
+    border-radius: 0;
+}
+
+/* Sosial */
+.sosial-section {
+    margin-top: 2em;
+}
+
+/* Footer */
+.footer {
+    margin-top: 1em;
+}
+
+.footer-section {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.ui.inverted.segment, .ui.primary.inverted.segment{
+    background: $color-black;
+    color: #fff;
+    border-top: .5em solid #fbbd08;
+}
+
+.ui.link.list a.item {
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+    display: none !important;
+    }
+    .masthead.segment {
+    min-height: 350px;
+    }
+}
