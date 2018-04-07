@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from pyt.detectBlur import preprocessing
+from pyt.metadata import metadata
 
 app = Flask(__name__, static_url_path='') # create the application instance
 
@@ -35,10 +36,13 @@ def upload(name="upload"):
 		blur = pre.filterGaus(gray)
 		deteksiTepi = pre.sobel(blur)
 		deteksiBlur = pre.blurDetection(deteksiTepi, height, width)
-		print (deteksiBlur)
+		# print (deteksiBlur)
 		# return "asu"
 		# return image
-		return render_template('blur.html', panjangBlur = deteksiBlur)
+
+		med = metadata()
+		exposureTime = med.exif(filename)
+		return render_template('blur.html', panjangBlur = deteksiBlur, exposureTime = exposureTime)
 
 if __name__ == "__main__":
     app.run(debug=True)
