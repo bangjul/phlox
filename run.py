@@ -4,8 +4,8 @@ from matplotlib import pyplot as plt
 
 from flask import Flask, render_template, request
 from flask_uploads import UploadSet, configure_uploads, IMAGES
-from pyt.detectBlur import preprocessing
-from pyt.metadata import metadata
+from pyt.detectBlur import Preprocessing
+from pyt.metadata import Metadata
 
 app = Flask(__name__, static_url_path='') # create the application instance
 
@@ -25,7 +25,7 @@ def upload(name="upload"):
 		# namabaru = "upload.jpg"
 		filename = photos.save(request.files['photo'])
 		
-		pre = preprocessing()
+		pre = Preprocessing()
 		image = pre.readImages(filename)
 		# print (image)
 		resize = pre.resize(image)
@@ -40,9 +40,9 @@ def upload(name="upload"):
 		# return "asu"
 		# return image
 
-		med = metadata()
-		exposureTime = med.exif(filename)
-		return render_template('blur.html', panjangBlur = deteksiBlur, exposureTime = exposureTime)
+		med = Metadata()
+		exposureTime, focalLength, iso, fStop, makAperture, ccd = med.exif(filename)
+		return render_template('blur.html', panjangBlur = deteksiBlur, exposureTime = exposureTime, focalLength = focalLength, iso = iso, fStop = fStop, makAperture = makAperture, ccd = ccd)
 
 if __name__ == "__main__":
     app.run(debug=True)

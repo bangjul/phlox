@@ -2,10 +2,10 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-class preprocessing(object):
+class Preprocessing(object):
 	"""docstring for preprocessing"""
 	def __init__(self):
-		super(preprocessing, self)
+		super(Preprocessing, self)
 
 	def readImages(self,filename):
 	    img = cv2.imread('static/public/images/' + filename)
