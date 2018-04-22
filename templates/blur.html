@@ -26,128 +26,120 @@
 </head>
 
 <body>
-
-<!-- //header -->
-<div class="header">
-    <div class="ui fixed borderless menu square">
-        <div class="ui container">
-            <div class="item">
-                <a href="./"><img class="ui small image" src="public/images/logo-phlox.png" ></a>
-            </div>
-        </div>
-    </div>
-</div>
-    
-
-<!-- content -->
-<div class="full-height" >
-    <div class="ui grid">
-
-        <!-- form -->
-        <div class="five wide column" >
-            <div class="ui teal segment" style="min-height: 550px">
-                <h2 class="ui dividing header">
-                    Set Variables
-                </h2>
-                <br>
-                <!-- <button class="fluid ui teal basic button"  id="processBlur" >Get Blur</button> -->
-                <form class="ui form" style="margin: 5px">
-                  <div class="field">
-                    <label>Blur Length</label>
-                    <input type="text" name="blur" value="{{ panjangBlur }}">
-                    <!-- <a class="ui pointing red basic label">{{ panjangBlur }} Pixel</a> -->
-                  </div>
-                  <div class="field">
-                    <label>Shutter Speed</label>
-                    <input type="text" name="ShutterSpeed" value="{{ exposureTime }}">
-                  </div>
-                  <div class="field">
-                    <label>Focal Length</label>
-                    <input type="text" name="FocalLength" placeholder="Milimeter" value="{{ focalLength }}">
-                  </div>
-                  <div class="field">
-                    <label>CCD Size</label>
-                    <input type="text" name="ccd" placeholder="Milimeter" value="{{ ccd }}">
-                  </div>
-                  <div class="field">
-                    <label>ISO</label>
-                    <input type="text" name="iso" placeholder="Milimeter" value="{{ iso }}">
-                  </div>
-                  <div class="field">
-                    <label>fStop</label>
-                    <input type="text" name="fstop" placeholder="Milimeter" value="{{ fStop }}">
-                  </div>
-                  <div class="field">
-                    <label>makAperture</label>
-                    <input type="text" name="makAperture" placeholder="Milimeter" value="{{ makAperture }}">
-                  </div>
-                  <div class="field">
-                    <label>Object Distance</label>
-                    <input type="text" name="Distance" placeholder="Meter">
-                  </div>
-                </form>
-                <br>
-                  <button class="fluid ui teal basic button"  id="process" >Process</button>
-            </div>
-        </div>
-        
-
-        <!-- image -->
-        <div class="eleven wide column" >
-            <div class="ui teal segment" style="min-height: 550px">
-
-                <h2 class="ui dividing header">
-                    Image Review
-                </h2>
-                <br>
-
-                <div class="ui container">
-                  <div class="ui two column grid" style="margin: 5px">
-                    <div class="column">
-                      <div class="ui fluid card">
-                        <div class="image">
-                          <img src="/public/images/hasil/resize.png">
-                        </div>
-                        <div class="content">
-                          <a class="header">Original</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="column">
-                      <div class="ui fluid card">
-                        <div class="image">
-                          <img src="/public/images/hasil/hasil.png">
-                        </div>
-                        <div class="content">
-                          <a class="header">Identifikasi Blur</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+  <div class=" body">
+    <!-- //header -->
+    <div class="header">
+        <div class="ui fixed borderless menu square">
+            <div class="ui container">
+                <div class="item">
+                    <a href="./"><img class="ui small image" src="public/images/logo-phlox.png" ></a>
                 </div>
             </div>
         </div>
-        <!-- image -->
     </div>
-</div>  
-<!-- conten -->
+        
 
+    <!-- content -->
+    <div class="full-height" >
+        <div class="ui grid">
 
-<!-- //footer -->
-<br>
-<div class="footer">
-    <div class="ui inverted vertical segment" >
-        <div class="ui center aligned container">
-            <div class="ui inverted section divider"></div>
-
-            <img src="public/images/logo-phloxcopy.png" class="ui centered mini image">
-            <div class="ui container">
-                <a>Phlox</a>
+            <!-- form -->
+            <div class="five wide column" >
+                <div class="ui teal segment" style="min-height: 530px">
+                    <h2 class="ui dividing header">
+                        Set Variables
+                    </h2>
+                    <br>
+                    <!-- <button class="fluid ui teal basic button"  id="processBlur" >Get Blur</button> -->
+                    <form class="ui form" style="margin: 5px" action = "/result" method = "GET">
+                      <div class="field">
+                        <label>Blur Length</label>
+                        <input type="text" name="blur" value="{{ panjangBlur }}">
+                        <!-- <a class="ui pointing red basic label">{{ panjangBlur }} Pixel</a> -->
+                      </div>
+                      <div class="field">
+                        <label>Shutter Speed</label>
+                        <input type="text" name="shutterSpeed" value="{{ exposureTime }}">
+                      </div>
+                      <div class="field">
+                        <label>Focal Length</label>
+                        <input type="text" name="focalLength" placeholder="Milimeter" value="{{ focalLength }}">
+                      </div>
+                      <div class="field">
+                        <label>CCD/CMOS Size</label>
+                        <input type="text" name="ccd" placeholder="Milimeter" value="{{ ccd }}">
+                      </div>
+                      <div class="field">
+                        <label>Object Distance</label>
+                        <input type="text" name="distance" placeholder="Meter">
+                      </div>
+                      <br>
+                      <button class="fluid ui teal basic button" type ="submit" value ="submit">Process</button>
+                    </form>
+                </div>
             </div>
             
+
+            <!-- image -->
+            <div class="eleven wide column" >
+                <div class="ui teal segment" style="min-height: 530px">
+
+                    <h2 class="ui dividing header">
+                        Image Review
+                    </h2>
+                    <br>
+
+                    <div class="ui container">
+                      <div class="ui two column grid" style="margin: 5px">
+                        <div class="column">
+                          <div class="ui fluid card">
+                            <div class="image">
+                              <img src="/public/images/hasil/resize.png">
+                            </div>
+                            <div class="content">
+                              <a class="header">Original</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="column">
+                          <div class="ui fluid card">
+                            <div class="image">
+                              <img src="/public/images/hasil/hasil.png">
+                            </div>
+                            <div class="content">
+                              <a class="header">Identifikasi Blur</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <!-- image -->
+        </div>
+    </div>  
+    <!-- conten -->
+
+
+    <!-- //footer -->
+    <br>
+    <div class="footer">
+        <div class="ui inverted vertical segment" >
+            <div class="ui center aligned container">
+                <div class="ui inverted section divider"></div>
+
+                <img src="public/images/logo-phloxcopy.png" class="ui centered mini image">
+                <div class="ui container">
+                    <a>Phlox</a>
+                </div>
+                
+            </div>
         </div>
     </div>
-</div>
+
+  </div>
+
+
 
 
 <!-- modal -->
@@ -174,31 +166,13 @@
 </body>
 
 <script type="text/javascript">
-    
-    
+  
     $( document ).ready(function() {
-    
     $('#modalProcess')
-      .modal('attach events', '#process', 'show')
-    ;
+      .modal('attach events', '#process', 'show');
     
     });
     
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-
-    }
 </script>
 
 

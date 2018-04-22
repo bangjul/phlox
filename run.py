@@ -41,8 +41,39 @@ def upload(name="upload"):
 		# return image
 
 		med = Metadata()
-		exposureTime, focalLength, iso, fStop, makAperture, ccd = med.exif(filename)
-		return render_template('blur.html', panjangBlur = deteksiBlur, exposureTime = exposureTime, focalLength = focalLength, iso = iso, fStop = fStop, makAperture = makAperture, ccd = ccd)
+		exposureTime, focalLength, ccd = med.exif(filename)
+		return render_template('blur.html', panjangBlur = deteksiBlur, exposureTime = exposureTime, focalLength = focalLength, ccd = ccd)
+
+@app.route("/result", methods=['GET', 'POST'])
+def result(name="result"):
+	if request.method=='GET':
+		K=float(request.args.get('blur', ''))
+		T=request.args.get('shutterSpeed', '')
+		shutter1 = int(T[0])
+		shutter2 = int(T[2:5])
+		print (shutter1)
+		print (shutter2)
+		f=float(request.args.get('focalLength', ''))
+		sx=float(request.args.get('ccd', ''))
+		z=float(request.args.get('distance', ''))
+		
+		v = round((z*K*sx)/((shutter1/shutter2)*f),3)
+		# return "Kecepatan objek : "+str(v)
+		return render_template('result.html', kecepatan = v)
+		# return "blur : "+a+" ,  shutterSpeed :  "+b+", focalLength : "+c+", ccd : "+d+", distance : "+e
+	else:
+		return "Not get method"
+
+@app.route("/student")
+def student(name="student"):
+	return render_template("student.html")
+
+@app.route("/hasil")
+def hasil(name="hasil"):
+	kata = 'sayabcde'
+	ai = kata[2:5]
+	print (ai)
+	return render_template("result.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

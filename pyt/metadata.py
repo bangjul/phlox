@@ -13,11 +13,11 @@ class Metadata(object):
  		tags = exifread.process_file(f)
  		exposureTime = tags['EXIF ExposureTime']
  		focalLength = tags['EXIF FocalLength']
- 		iso = tags['EXIF ISOSpeedRatings']
- 		fStop = tags['EXIF FNumber']
- 		makAperture = tags['EXIF MaxApertureValue']
- 		ccd = tags['EXIF FocalLengthIn35mmFilm']
- 		return exposureTime, focalLength, iso, fStop, makAperture, ccd
+ 		ccd = 366.6
+ 		# iso = tags['EXIF ISOSpeedRatings']
+ 		# fStop = tags['EXIF FNumber']
+ 		# makAperture = tags['EXIF MaxApertureValue']
+ 		return exposureTime, focalLength, ccd
 		# print("ExposureTime: %s" % (tags['EXIF ExposureTime']))
 		# for tag in tags.keys():
 		#     if tag not in ('JPEGThumbnail', 'TIFFThumbnail', 'Filename', 'EXIF MakerNote'):
