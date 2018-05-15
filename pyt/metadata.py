@@ -8,12 +8,12 @@ class Metadata(object):
 
  	def exif(self, filename):
  		# Open image file for reading (binary mode)
- 		f = open('static/public/images/' + filename, 'rb')
+ 		f = open('static/public/images/test/' + filename, 'rb')
  		# Return Exif tags
  		tags = exifread.process_file(f)
  		exposureTime = tags['EXIF ExposureTime']
  		focalLength = tags['EXIF FocalLength']
- 		ccd = 366.6
+ 		ccd = 0.0136
  		# iso = tags['EXIF ISOSpeedRatings']
  		# fStop = tags['EXIF FNumber']
  		# makAperture = tags['EXIF MaxApertureValue']

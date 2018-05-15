@@ -8,14 +8,14 @@ class Preprocessing(object):
 		super(Preprocessing, self)
 
 	def readImages(self,filename):
-	    img = cv2.imread('static/public/images/' + filename)
+	    img = cv2.imread('static/public/images/test/' + filename)
 	    return img
 
 	def resize(self,img):
-		newHeight = 506
-		newWidth = 900
+		newHeight = 720
+		newWidth = 1280
 		reImg = cv2.resize(img,(newWidth, newHeight))
-		cv2.imwrite('static/public/images/hasil/resize.png',reImg)
+		cv2.imwrite('static/public/images/test/resize.png',reImg)
 		return reImg
 
 	def filterGray(self,img):
@@ -58,11 +58,11 @@ class Preprocessing(object):
 		mak = tes.max()
 		makx, maky = np.unravel_index(np.argmax(tes, axis=None), tes.shape)
 		
-		posBlury, posBlurx = np.where(tes > 20)
+		posBlury, posBlurx = np.where(tes > 30)
 		posBlurKiri = np.min(posBlurx)
 		posBlurKanan = np.max(posBlurx)
 		
-		posMaky, posMakx = np.where(tes > mak-30)
+		posMaky, posMakx = np.where(tes > mak-20)
 		posMakKiri = np.min(posMakx)
 		posMakKanan = np.max(posMakx)
 
@@ -79,14 +79,16 @@ class Preprocessing(object):
 			elif x == posBlurKanan:
 				for y in range(0,height):
 					tesImage[y][x] = 255
-		cv2.imwrite('static/public/images/hasil/hasil.png',tesImage)
+		cv2.imwrite('static/public/images/test/hasil.png',tesImage)
 
 		lengthBlurKiri = posMakKiri - posBlurKiri
 		lengthBlurKanan = posBlurKanan - posMakKanan
 		if lengthBlurKiri > lengthBlurKanan:
+			return lengthBlurKanan
+		if lengthBlurKiri == lengthBlurKanan:
 			return lengthBlurKiri
 		else:
-			return lengthBlurKanan
+			return lengthBlurKiri
 
 		
 

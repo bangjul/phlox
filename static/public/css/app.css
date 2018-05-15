@@ -128,7 +128,7 @@ body {
 
 .full-height {
   margin-top: 7em;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
   margin-left: 1em; }
 
 .login-section {
@@ -210,16 +210,17 @@ body {
 /* Footer */
 .footer {
   margin-top: 1em;
-  position:absolute;
+  position:;
   bottom:0;
-  width:100%; }
+  width:100%;}
 
 
 
 .ui.inverted.segment, .ui.primary.inverted.segment {
   background: black;
   color: #fff;
-  border-top: .3em solid #00B5AD; }
+  border-top: .3em solid #00B5AD;
+  min-height: 330px; }
 
 .ui.link.list a.item {
   color: #fff; }

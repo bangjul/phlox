@@ -83,28 +83,27 @@
             <!-- image -->
             <div class="eleven wide column" >
                 <div class="ui teal segment" style="min-height: 530px">
-
                     <h2 class="ui dividing header">
                         Image Review
                     </h2>
                     <br>
-
                     <div class="ui container">
                       <div class="ui two column grid" style="margin: 5px">
                         <div class="column">
-                          <div class="ui fluid card">
+                          <div class="ui fluid teal card">
                             <div class="image">
-                              <img src="/public/images/hasil/resize.png">
+                              <img src="data:image/png;base64,{{ dataOri }}">
                             </div>
                             <div class="content">
                               <a class="header">Original</a>
                             </div>
                           </div>
                         </div>
+
                         <div class="column">
-                          <div class="ui fluid card">
+                          <div class="ui fluid teal card">
                             <div class="image">
-                              <img src="/public/images/hasil/hasil.png">
+                              <img src="data:image/png;base64,{{ dataHasil }}">
                             </div>
                             <div class="content">
                               <a class="header">Identifikasi Blur</a>
@@ -141,8 +140,8 @@
 
 
 
+<!-- modal
 
-<!-- modal -->
 <div class="ui modal" id="modalProcess">
   <i class="close icon"></i>
   <div class="header">
@@ -152,9 +151,9 @@
     <div class="image">
       Kecepatan Objek = 80 km/jam
     </div>
-    <!-- <div class="description">
+    <div class="description">
       A description can appear on the right
-    </div> -->
+    </div>
   </div>
   <div class="actions">
     <div class="ui button">Cancel</div>
@@ -174,7 +173,7 @@
     });
     
 </script>
-
+ -->
 
 
 </html>
