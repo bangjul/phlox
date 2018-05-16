@@ -8,14 +8,14 @@ class Preprocessing(object):
 		super(Preprocessing, self)
 
 	def readImages(self,filename):
-	    img = cv2.imread('static/public/images/test/' + filename)
+	    img = cv2.imread('project/static/public/images/test/' + filename)
 	    return img
 
 	def resize(self,img):
 		newHeight = 720
 		newWidth = 1280
 		reImg = cv2.resize(img,(newWidth, newHeight))
-		cv2.imwrite('static/public/images/test/resize.png',reImg)
+		cv2.imwrite('project/static/public/images/test/resize.png',reImg)
 		return reImg
 
 	def filterGray(self,img):
@@ -79,7 +79,7 @@ class Preprocessing(object):
 			elif x == posBlurKanan:
 				for y in range(0,height):
 					tesImage[y][x] = 255
-		cv2.imwrite('static/public/images/test/hasil.png',tesImage)
+		cv2.imwrite('project/static/public/images/test/hasil.png',tesImage)
 
 		lengthBlurKiri = posMakKiri - posBlurKiri
 		lengthBlurKanan = posBlurKanan - posMakKanan

@@ -8,7 +8,7 @@ class Metadata(object):
 
  	def exif(self, filename):
  		# Open image file for reading (binary mode)
- 		f = open('static/public/images/test/' + filename, 'rb')
+ 		f = open('project/static/public/images/test/' + filename, 'rb')
  		# Return Exif tags
  		tags = exifread.process_file(f)
  		exposureTime = tags['EXIF ExposureTime']
