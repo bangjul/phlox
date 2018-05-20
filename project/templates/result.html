@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <script src="/public/javascript/semantic.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="/public/css/semantic.min.css" />
-  <link rel="stylesheet" type="text/css" href="/public/css/app.css" />
+  <script src="/static/public/javascript/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/public/css/semantic.min.css" />
+  <link rel="stylesheet" type="text/css" href="/static/public/css/app.css" />
 
   <style>
     body,h1 {font-family: "Raleway", sans-serif}
     body, html {height: 100%}
     .bgimg {
-        background-image: url('public/images/wall.jpg');
+        background-image: url('/static/public/images/wall.jpg');
         min-height: 100%;
         background-position: center;
         background-size: cover;
@@ -23,10 +23,10 @@
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <a href="./"><img class="ui small image" src="public/images/logo-phlox.png" ></a>
+    <a href="./"><img class="ui small image" src="/static/public/images/logo-phlox.png" ></a>
   </div>
   <div class="w3-display-middle">
-    <h2 class="w3-jumbo w3-animate-top">KECEPATAN : {{ kecepatan }} m/second</h2>
+    <h2 class="w3-jumbo w3-animate-top">KECEPATAN : {{ kecepatan }} km/h</h2>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <a href="./"><p class="w3-large w3-center">back to home</p></a>
   </div>

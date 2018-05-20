@@ -74,6 +74,7 @@ def result(name="result"):
 			((z*K*(sx/1000))/
 				((shutter1/shutter2)*(f/1000))
 				),1)
+		v = round(v*3600/1000, 1)
 		return render_template('result.html', kecepatan = v)
 	else:
 		return "Not get method"
