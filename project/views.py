@@ -6,21 +6,51 @@ import cv2
 
 from project import app
 from matplotlib import pyplot as plt
-from flask import Flask, render_template, request, url_for, redirect, send_from_directory, Response
+from flask import Flask, render_template, request, url_for, redirect, send_from_directory, Response, session, Blueprint
 from flask_uploads import UploadSet, configure_uploads, IMAGES
 from pyt.detectBlur import Preprocessing
 from pyt.metadata import Metadata
 
+from project.session.controllers import check_login_session as check_login_session
+from flask_login import LoginManager
 
 photos = UploadSet('photos', IMAGES)
 
 app.config['UPLOADED_PHOTOS_DEST'] = 'project/static/public/images/test/'
 configure_uploads(app, photos)
 
+# @app.route("/",methods=['GET','POST'])
+# def index(name="phlox"):
+	
+#     return render_template('index.html', name=name)
 
-@app.route("/")
+@app.route("/",methods=['GET','POST'])
 def index(name="phlox"):
-    return render_template('index.html', name=name)
+	if check_login_session():
+        # return "Sudah Login"
+		return render_template('index.html', name=name)
+	else:
+		return redirect("/signin")
+    # return render_template('index.html', name=name)
+
+@app.route('/signin',methods=['GET','POST'])
+def signin():
+	if check_login_session() is False:
+		if request.method == "GET":
+			return render_template("login.html")
+		else:
+			if request.form['email'] == "julio@gmail.com" and request.form['password'] == "pass123":
+				session['email'] = request.form['email']
+				return redirect("/")
+			else:
+				return render_template("login.html")
+	else:
+		return redirect("/")
+
+@app.route('/logout',methods=['GET'])
+def logout():
+    session.pop('email')
+    return redirect("/")
 
 @app.route("/upload", methods=['POST'])
 def upload(name="upload"):
@@ -79,9 +109,9 @@ def result(name="result"):
 	else:
 		return "Not get method"
 
-@app.route("/student")
-def student(name="student"):
-	return render_template("student.html")
+@app.route("/login")
+def student(name="login"):
+	return render_template("login.html")
 
 @app.route("/hasil")
 def hasil(name="hasil"):
