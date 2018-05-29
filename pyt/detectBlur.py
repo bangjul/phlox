@@ -62,7 +62,7 @@ class Preprocessing(object):
 		posBlurKiri = np.min(posBlurx)
 		posBlurKanan = np.max(posBlurx)
 		
-		posMaky, posMakx = np.where(tes > mak-20)
+		posMaky, posMakx = np.where(tes > mak-5)
 		posMakKiri = np.min(posMakx)
 		posMakKanan = np.max(posMakx)
 
