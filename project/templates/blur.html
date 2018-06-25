@@ -52,26 +52,38 @@
                     <br>
                     <!-- <button class="fluid ui teal basic button"  id="processBlur" >Get Blur</button> -->
                     <form class="ui form" style="margin: 5px" action = "/result" method = "GET">
-                      <div class="field">
-                        <label>Blur Length</label>
-                        <input type="text" name="blur" value="{{ panjangBlur }}">
+                      <label>Blur Length</label>
+                      <div class="ui fluid icon input">
+                        <input type="text" name="blur" placeholder="Pixel" value="{{ panjangBlur }}">
+                        <!-- <button class="ui icon button" id="infoBlur" type="button">
+                          <i class="teal info icon"></i>
+                        </button> -->
+                        <i class="circular info link icon" id="infoShutter"></i>
                         <!-- <a class="ui pointing red basic label">{{ panjangBlur }} Pixel</a> -->
                       </div>
-                      <div class="field">
-                        <label>Shutter Speed</label>
-                        <input type="text" name="shutterSpeed" value="{{ exposureTime }}">
+                      
+                      <label>Shutter Speed</label>
+                      <div class="ui fluid icon input">
+                        <input type="text" name="shutterSpeed" placeholder="second" value="{{ exposureTime }}">
+                        <i class="circular info link icon" id="infoBlur"></i>
                       </div>
-                      <div class="field">
-                        <label>Focal Length</label>
+
+                      <label>Focal Length</label>
+                      <div class="ui fluid icon input">
                         <input type="text" name="focalLength" placeholder="Milimeter" value="{{ focalLength }}">
+                        <i class="circular info link icon" id="infoBlur"></i>
                       </div>
-                      <div class="field">
-                        <label>CCD/CMOS Size</label>
+                      
+                      <label>CCD/CMOS Size</label>
+                      <div class="ui fluid icon input">
                         <input type="text" name="ccd" placeholder="Milimeter" value="{{ ccd }}">
+                        <i class="circular info link icon" id="infoBlur"></i>
                       </div>
-                      <div class="field">
-                        <label>Object Distance</label>
+                      
+                      <label>Object Distance</label>
+                      <div class="ui fluid icon input">
                         <input type="text" name="distance" placeholder="Meter">
+                        <i class="circular info link icon" id="infoBlur"></i>
                       </div>
                       <br>
                       <button class="fluid ui teal basic button" type ="submit" value ="submit">Process</button>
@@ -140,40 +152,74 @@
 
 
 
-<!-- modal
-
-<div class="ui modal" id="modalProcess">
+<!-- modal -->
+<div class="ui modal" id="modalBlur">
   <i class="close icon"></i>
+  
   <div class="header">
-    Kecepatan Objek
+    Motion Blur
   </div>
+  
   <div class="image content">
     <div class="image">
-      Kecepatan Objek = 80 km/jam
+      <img class="ui fluid image" src="static/public/images/blurInfo2.png">
+      <p>Motion blur adalah ........................................................................................</p>
     </div>
-    <div class="description">
+    <!-- <div class="description">
       A description can appear on the right
-    </div>
+    </div> -->
   </div>
   <div class="actions">
-    <div class="ui button">Cancel</div>
-    <div class="ui button">OK</div>
-  </div>
+    
+      <div class="right floated author">
+        <img class="ui avatar image" src="static/public/images/people.png"> Jull
+      </div>
+    </div>
 </div>
 
+<!-- shutter -->
+<div class="ui modal" id="modalShutter">
+  <i class="close icon"></i>
+  <div class="header">
+    Motion Blur
+  </div>
+  
+  <div class="image content">
+    <div class="image">
+      <img class="ui fluid image" src="static/public/images/blurInfo2.png">
+      <p>Motion blur adalah ........................................................................................</p>
+    </div>
+    <!-- <div class="description">
+      A description can appear on the right
+    </div> -->
+  </div>
+  <div class="actions">
+    
+      <div class="right floated author">
+        <img class="ui avatar image" src="static/public/images/people.png"> Jull
+      </div>
+    </div>
+</div>
 
 </body>
 
 <script type="text/javascript">
   
     $( document ).ready(function() {
-    $('#modalProcess')
-      .modal('attach events', '#process', 'show');
+    $('#modalBlur')
+      .modal('attach events', '#infoBlur', 'show');
+    
+    });
+
+
+    $( document ).ready(function() {
+    $('#modalShutter')
+      .modal('attach events', '#infoShutter', 'show');
     
     });
     
 </script>
- -->
+
 
 
 </html>
