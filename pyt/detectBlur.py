@@ -20,8 +20,23 @@ class Preprocessing(object):
 
 	def filterGray(self,img):
 		gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-		# cv2.imwrite('hasil/hasilgray.jpg',gray)
+		# cv2.imwrite('project/static/public/images/test/hasilgray.png',gray)
 		return gray
+		# normalisasi
+		# tes = np.matrix(gray.copy())
+		# mak = tes.max()
+		# # print(mak)
+		# new_gray = gray.copy()
+		# for x in range(0,720):
+		# 	for y in range(0,1280):
+		# 		new_gray[x][y] = (new_gray[x][y]*255)/mak
+		# cv2.imwrite('project/static/public/images/test/hasilgraynormalisasi.png',new_gray)
+		# return new_gray
+		
+		# normalisasi = cv2.normalize(gray,None,0,255,cv2.NORM_MINMAX)
+		# cv2.imwrite('project/static/public/images/test/hasilgraynormalisasi.png',normalisasi)
+		# return normalisasi
+		
 
 	def filterGaus(self,img):
 		blur = cv2.GaussianBlur(img,(3,3),3)

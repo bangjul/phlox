@@ -100,22 +100,35 @@ def result(name="result"):
 		sx=float(request.args.get('ccd', ''))
 		z=float(request.args.get('distance', ''))
 		
+		img = open('project//static/public/images/test/resize.png', 'rb')
+		ftp = img.read()
+		dataOri = base64.b64encode(ftp)
+		dataOri = dataOri.decode('utf-8')
+
 		v = round(
 			((z*K*(sx/1000))/
 				((shutter1/shutter2)*(f/1000))
 				),1)
 		v = round(v*3600/1000, 1)
-		return render_template('result.html', kecepatan = v)
+		return render_template('result.html', kecepatan = v, dataOri=dataOri, blur=K)
 	else:
 		return "Not get method"
 
 @app.route("/login")
-def student(name="login"):
+def login(name="login"):
 	return render_template("login.html")
 
 @app.route("/hasil")
 def hasil(name="hasil"):
-	kata = 'sayabcde'
-	ai = kata[2:5]
-	print (ai)
+	# kata = 'sayabcde'
+	# ai = kata[2:5]
+	# print (ai)
 	return render_template("result.html")
+	
+@app.route("/chart")
+def chart(name="chart"):
+	return render_template("chart.html")
+
+@app.route("/coba")
+def coba(name="coba"):
+	return render_template("hasil.html")

@@ -1,45 +1,112 @@
 <!DOCTYPE html>
 <html>
   <title>Result Speed Object</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <script src="/static/public/javascript/semantic.min.js"></script>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  
+  <title>Phlox - Speed Detection Estimation</title>
   <link rel="stylesheet" type="text/css" href="/static/public/css/semantic.min.css" />
   <link rel="stylesheet" type="text/css" href="/static/public/css/app.css" />
-
-  <style>
-    body,h1 {font-family: "Raleway", sans-serif}
-    body, html {height: 100%}
-    .bgimg {
-        background-image: url('/static/public/images/wall.jpg');
-        min-height: 100%;
-        background-position: center;
-        background-size: cover;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="/static/lib/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="/static/lib/slick/slick-theme.css" />
+  
+  <script src="/static/public/javascript/jquery.min.js"></script>
+  <script src="/static/public/javascript/semantic.min.js"></script>
+  <script type="text/javascript" src="/static/lib/slick/slick.min.js"></script>
+  <script src="/static/public/javascript/following-menu.js"></script>
+  <script src="/static/public/javascript/banner-carousel.js"></script>
+  <script type="text/javascript" src="/static/js/header.js"></script>
+  <script type="text/javascript" src="/static/js/footer.js"></script>
 <body>
-
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    <a href="./"><img class="ui small image" src="/static/public/images/logo-phlox.png" ></a>
-  </div>
-  <div class="w3-display-middle">
-    <h2 class="w3-jumbo w3-animate-top">KECEPATAN : {{ kecepatan }} km/h</h2>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <a href="./">
-    <div class="ui right floated buttons">
-      <button class="ui labeled icon button">
-        <i class="left chevron icon"></i>
-        Back to Home
-      </button>
+<!-- //header -->
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment" style="min-height: 100px;">
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item">
+        <i class="sidebar icon"></i>
+        </a>
+        <a class="item" href="./">Home</a>
+        <a class="item" href="https://julio.gravicodev.com">Profile</a>
+        <a class="item" href="/chart">Chart</a>
+        <!-- <a class="item">Careers</a> -->
+        <div class="right item">
+        <!-- <a class="ui inverted button">Log in</a> -->
+        <a class="ui inverted button" href="/logout">Log Out</a>
+        </div>
+      </div>
     </div>
-    </a>
   </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="https://julio.gravicodev.com/" target="_blank">JulioAlfian</a>
+
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">Kecepatan Object</h3>
+            <div class="ui teal horizontal statistics">
+              <div class="statistic">
+                <div class="value">
+                  {{ kecepatan }}
+                </div>
+                <div class="label">
+                  km/jam
+                </div>
+              </div>
+            </div>
+          
+            <h3 class="ui header">Panjang Motion Blur</h3>
+          <div class="ui teal horizontal statistics">
+            <div class="statistic">
+              <div class="value">
+                {{blur}}
+              </div>
+              <div class="label">
+                pixel
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="six wide right floated column">
+          <div class="ui segment">
+            <img src="data:image/png;base64,{{ dataOri }}" class="ui large bordered rounded image">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="center aligned column">
+          <br>
+          <a href="./">
+            <div class="positive ui huge floated buttons">
+              <button class="ui labeled icon button">
+                <i class="left chevron icon"></i>
+                Back to Home
+              </button>
+            </div>
+            </a>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- //footer -->
+  <div class="footer">
+      <div class="ui inverted vertical segment" >
+          <div class="ui center aligned container">
+              <div class="ui inverted section divider"></div>
+
+              <img src="static/public/images/logo-phloxcopy.png" class="ui centered mini image">
+              <div class="ui container">
+                  <a>Phlox</a>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+  <!-- footer -->
 </div>
 
 </body>

@@ -1,0 +1,5 @@
+1. open cmd
+2. env\Scripts\activate
+3. py run.py
+4. open browser
+5. open localhost:5000

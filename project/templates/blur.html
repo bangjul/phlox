@@ -26,133 +26,140 @@
 </head>
 
 <body>
-  <div class=" body">
-    <!-- //header -->
-    <div class="header">
-        <div class="ui fixed borderless menu square">
-            <div class="ui container">
-                <div class="item">
-                    <a href="./"><img class="ui small image" src="static/public/images/logo-phlox.png" ></a>
-                </div>
-            </div>
+
+<!-- //header -->
+<div class="pusher">
+    <div class="ui inverted vertical masthead center aligned segment" style="min-height: 100px;">
+      <div class="ui container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item">
+          <i class="sidebar icon"></i>
+          </a>
+          <a class="item" href="./">Home</a>
+          <a class="item" href="https://julio.gravicodev.com">Profile</a>
+          <a class="item" href="/chart">Chart</a>
+          <!-- <a class="item">Careers</a> -->
+          <div class="right item">
+          <!-- <a class="ui inverted button">Log in</a> -->
+          <a class="ui inverted button" href="/logout">Log Out</a>
+          </div>
         </div>
+      </div>
     </div>
         
+  <!-- content -->
+  <div class="full-height" >
+      <div class="ui grid">
 
-    <!-- content -->
-    <div class="full-height" >
-        <div class="ui grid">
+          <!-- form -->
+          <div class="five wide column" >
+              <div class="ui teal segment" style="min-height: 530px">
+                  <h2 class="ui dividing header">
+                      Set Variables
+                  </h2>
+                  <br>
+                  <!-- <button class="fluid ui teal basic button"  id="processBlur" >Get Blur</button> -->
+                  <form class="ui form" style="margin: 5px" action = "/result" method = "GET">
+                    <label>Blur Length</label>
+                    <div class="ui fluid icon input">
+                      <input type="text" name="blur" placeholder="Pixel" value="{{ panjangBlur }}" required>
+                      <!-- <button class="ui icon button" id="infoBlur" type="button">
+                        <i class="teal info icon"></i>
+                      </button> -->
+                      <i class="circular info link icon" id="infoBlur"></i>
+                      <!-- <a class="ui pointing red basic label">{{ panjangBlur }} Pixel</a> -->
+                    </div>
+                    
+                    <label>Shutter Speed</label>
+                    <div class="ui fluid icon input">
+                      <input type="text" name="shutterSpeed" placeholder="second" value="{{ exposureTime }}" required>
+                      <i class="circular info link icon" id="infoShutter"></i>
+                    </div>
 
-            <!-- form -->
-            <div class="five wide column" >
-                <div class="ui teal segment" style="min-height: 530px">
-                    <h2 class="ui dividing header">
-                        Set Variables
-                    </h2>
+                    <label>Focal Length</label>
+                    <div class="ui fluid icon input">
+                      <input type="text" name="focalLength" placeholder="Milimeter" value="{{ focalLength }}" required>
+                      <i class="circular info link icon" id="infoFocal"></i>
+                    </div>
+                    
+                    <label>CCD/CMOS Size</label>
+                    <div class="ui fluid icon input">
+                      <input type="text" name="ccd" placeholder="Milimeter" value="{{ ccd }}" required>
+                      <i class="circular info link icon" id="infoCCD"></i>
+                    </div>
+                    
+                    <label>Object Distance</label>
+                    <div class="ui fluid icon input">
+                      <input type="text" name="distance" placeholder="Meter" required>
+                      <i class="circular info link icon" id="infoDistance"></i>
+                    </div>
                     <br>
-                    <!-- <button class="fluid ui teal basic button"  id="processBlur" >Get Blur</button> -->
-                    <form class="ui form" style="margin: 5px" action = "/result" method = "GET">
-                      <label>Blur Length</label>
-                      <div class="ui fluid icon input">
-                        <input type="text" name="blur" placeholder="Pixel" value="{{ panjangBlur }}">
-                        <!-- <button class="ui icon button" id="infoBlur" type="button">
-                          <i class="teal info icon"></i>
-                        </button> -->
-                        <i class="circular info link icon" id="infoShutter"></i>
-                        <!-- <a class="ui pointing red basic label">{{ panjangBlur }} Pixel</a> -->
-                      </div>
-                      
-                      <label>Shutter Speed</label>
-                      <div class="ui fluid icon input">
-                        <input type="text" name="shutterSpeed" placeholder="second" value="{{ exposureTime }}">
-                        <i class="circular info link icon" id="infoBlur"></i>
-                      </div>
+                    <button class="fluid ui teal basic button" type ="submit" value ="submit">Process</button>
+                  </form>
+              </div>
+          </div>
+          
 
-                      <label>Focal Length</label>
-                      <div class="ui fluid icon input">
-                        <input type="text" name="focalLength" placeholder="Milimeter" value="{{ focalLength }}">
-                        <i class="circular info link icon" id="infoBlur"></i>
-                      </div>
-                      
-                      <label>CCD/CMOS Size</label>
-                      <div class="ui fluid icon input">
-                        <input type="text" name="ccd" placeholder="Milimeter" value="{{ ccd }}">
-                        <i class="circular info link icon" id="infoBlur"></i>
-                      </div>
-                      
-                      <label>Object Distance</label>
-                      <div class="ui fluid icon input">
-                        <input type="text" name="distance" placeholder="Meter">
-                        <i class="circular info link icon" id="infoBlur"></i>
-                      </div>
-                      <br>
-                      <button class="fluid ui teal basic button" type ="submit" value ="submit">Process</button>
-                    </form>
-                </div>
-            </div>
-            
-
-            <!-- image -->
-            <div class="eleven wide column" >
-                <div class="ui teal segment" style="min-height: 530px">
-                    <h2 class="ui dividing header">
-                        Image Review
-                    </h2>
-                    <br>
-                    <div class="ui container">
-                      <div class="ui two column grid" style="margin: 5px">
-                        <div class="column">
-                          <div class="ui fluid teal card">
-                            <div class="image">
-                              <img src="data:image/png;base64,{{ dataOri }}">
-                            </div>
-                            <div class="content">
-                              <a class="header">Original</a>
-                            </div>
+          <!-- image -->
+          <div class="eleven wide column" >
+              <div class="ui teal segment" style="min-height: 530px">
+                  <h2 class="ui dividing header">
+                      Image Review
+                  </h2>
+                  <br>
+                  <div class="ui container">
+                    <div class="ui two column grid" style="margin: 5px">
+                      <div class="column">
+                        <div class="ui fluid teal card">
+                          <div class="image">
+                            <img src="data:image/png;base64,{{ dataOri }}">
+                          </div>
+                          <div class="content">
+                            <a class="header">Original</a>
                           </div>
                         </div>
+                      </div>
 
-                        <div class="column">
-                          <div class="ui fluid teal card">
-                            <div class="image">
-                              <img src="data:image/png;base64,{{ dataHasil }}">
-                            </div>
-                            <div class="content">
-                              <a class="header">Identifikasi Blur</a>
-                            </div>
+                      <div class="column">
+                        <div class="ui fluid teal card">
+                          <div class="image">
+                            <img src="data:image/png;base64,{{ dataHasil }}">
+                          </div>
+                          <div class="content">
+                            <a class="header">Identifikasi Blur</a>
                           </div>
                         </div>
                       </div>
                     </div>
-                </div>
-            </div>
-            <!-- image -->
-        </div>
-    </div>  
-    <!-- conten -->
+                  </div>
+              </div>
+          </div>
+          <!-- image -->
+      </div>
+  </div>  
+  <!-- conten -->
 
+  <!-- //footer -->
+  <br>
+  <div class="footer">
+      <div class="ui inverted vertical segment" >
+          <div class="ui center aligned container">
+              <div class="ui inverted section divider"></div>
 
-    <!-- //footer -->
-    <br>
-    <div class="footer">
-        <div class="ui inverted vertical segment" >
-            <div class="ui center aligned container">
-                <div class="ui inverted section divider"></div>
-
-                <img src="static/public/images/logo-phloxcopy.png" class="ui centered mini image">
-                <div class="ui container">
-                    <a>Phlox</a>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-
+              <img src="static/public/images/logo-phloxcopy.png" class="ui centered mini image">
+              <div class="ui container">
+                  <a>Phlox</a>
+              </div>
+              
+          </div>
+      </div>
   </div>
+</div>
 
 
 
 <!-- modal -->
+<!-- blur -->
 <div class="ui modal" id="modalBlur">
   <i class="close icon"></i>
   
@@ -163,7 +170,9 @@
   <div class="image content">
     <div class="image">
       <img class="ui fluid image" src="static/public/images/blurInfo2.png">
-      <p>Motion blur adalah ........................................................................................</p>
+      <br>
+      <p>Motion blur adalah saat shutter kamera tetap terbuka untuk jangka waktu tertentu dan efek yang disebabkan oleh gerakan relatif antara kamera dan objek yang bergerak.
+      <br>Objek yang bergerak dengan cepat dapat menimbulkan blur (motion blur) saat diambil gambarnya oleh kamera. </p>
     </div>
     <!-- <div class="description">
       A description can appear on the right
@@ -181,17 +190,63 @@
 <div class="ui modal" id="modalShutter">
   <i class="close icon"></i>
   <div class="header">
-    Motion Blur
+    Shutter Speed
+  </div>
+  
+  <div class="image content">
+    <div class="ui grid">
+      <div class="eight wide column">
+        <div class="ui fluid card">
+          <img class="ui fluid image" src="static/public/images/1-200-91.png">
+          <div class="content">
+              <div class="header">1/200 ms</div>
+              <div class="meta">
+                <a>Length Blur : 91</a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="eight wide column">
+        <div class="ui fluid card">
+          <img class="ui fluid image" src="static/public/images/1-320-63.png">
+          <div class="content">
+            <div class="header">1/320 ms</div>
+            <div class="meta">
+              <a>Length Blur : 63</a>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="sixteen wide column">
+        <p>Shutter Speed adalah pengaturan pada kamera yang mengatur lamanya waktu shutter terbuka, sehingga memunginkan cahaya masuk melalui lensa ke sensor di dalam kamera.<br>
+        Kecepatan shutter mempengaruhi panjang motion blur yang didapat di foto. Semakin kecil shutter speednya, maka semakin cepat kamera menangkap objek, semakin kecil juga panjang blur yang di dapat.<br>
+        Begitu juga sebaliknya.</p>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+      <div class="right floated author">
+        <img class="ui avatar image" src="static/public/images/people.png"> Jull
+      </div>
+  </div>
+</div>
+
+<!-- Focal -->
+<div class="ui modal" id="modalFocal">
+  <i class="close icon"></i>
+  
+  <div class="header">
+    Focal Length
   </div>
   
   <div class="image content">
     <div class="image">
-      <img class="ui fluid image" src="static/public/images/blurInfo2.png">
-      <p>Motion blur adalah ........................................................................................</p>
+      <img class="ui fluid image" src="static/public/images/focalLength3.png">
+      <br>
+      <p>Focal Length adalah jarak antara lensa dan bidan focal(sensor di kamera digital atau film) dimana foto terbentuk..
+      <br>Focal length dinyatakan dalam besaran milimeter dan diberi lambang f. Focal length menentukan seberapa lebar sudut pandang lensa.
+      <br>Semakin panjang focal length, semakin sempit sapuannya. </p>
     </div>
-    <!-- <div class="description">
-      A description can appear on the right
-    </div> -->
   </div>
   <div class="actions">
     
@@ -201,6 +256,53 @@
     </div>
 </div>
 
+<!-- CCD -->
+<div class="ui modal" id="modalCCD">
+  <i class="close icon"></i>
+  
+  <div class="header">
+    Sensor Camera
+  </div>
+  
+  <div class="image content">
+    <div class="image">
+      <img class="ui fluid image" src="static/public/images/sensor.png">
+      <br>
+      <p>Sensor adalah bagian pada kamera yang peka cahaya, tempat gambar dibentukm dan dirubah menjadi sinyal data. Ukuran sensor berkaitan dengan kemampuan menangkap cahaya dan menentukan bagus tidaknya hasil foto yang di ambil.
+      <br>Sekeping sensor pada dasarnya merupakan sekumpulan piksel yang peka cahaya, umumnya sekeping sensor punya 10 juta pixel bahkan lebih. Makin banyak pixel, makin detil foto yang di ambil.
+      </p>
+    </div>
+  </div>
+  <div class="actions">
+    
+      <div class="right floated author">
+        <img class="ui avatar image" src="static/public/images/people.png"> Jull
+      </div>
+    </div>
+</div>
+
+<!-- Distance -->
+<div class="ui modal" id="modalDistance">
+  <i class="close icon"></i>
+  
+  <div class="header">
+    Object Distance
+  </div>
+  
+  <div class="image content">
+    <div class="image">
+      <img class="ui fluid image" src="static/public/images/objectDistance.png">
+      <br>
+      <p>Object Distance adalah jarak antara kamera dan objek yang akan di ambil fotonya. </p>
+    </div>
+  </div>
+  <div class="actions">
+    
+      <div class="right floated author">
+        <img class="ui avatar image" src="static/public/images/people.png"> Jull
+      </div>
+    </div>
+</div>
 </body>
 
 <script type="text/javascript">
@@ -215,6 +317,24 @@
     $( document ).ready(function() {
     $('#modalShutter')
       .modal('attach events', '#infoShutter', 'show');
+    
+    });
+
+    $( document ).ready(function() {
+    $('#modalFocal')
+      .modal('attach events', '#infoFocal', 'show');
+    
+    });
+
+    $( document ).ready(function() {
+    $('#modalCCD')
+      .modal('attach events', '#infoCCD', 'show');
+    
+    });
+
+    $( document ).ready(function() {
+    $('#modalDistance')
+      .modal('attach events', '#infoDistance', 'show');
     
     });
     
