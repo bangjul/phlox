@@ -39,7 +39,7 @@ def signin():
 		if request.method == "GET":
 			return render_template("login.html")
 		else:
-			if request.form['email'] == "julio@gmail.com" and request.form['password'] == "pass123":
+			if request.form['email'] == "julio@gmail.com" and request.form['password'] == "sapehkerrap123":
 				session['email'] = request.form['email']
 				return redirect("/")
 			else:
